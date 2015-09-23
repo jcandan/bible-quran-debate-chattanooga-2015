@@ -373,8 +373,8 @@ fieldset[disabled] .btn-primary.active {
 .btn {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   border: none;
-  border-radius: 300px;
-  font-weight: 700;
+  border-radius: 3px;
+  font-weight: 200;
   text-transform: uppercase;
 }
 .btn-xl {
