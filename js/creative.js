@@ -51,14 +51,14 @@
         $('#map').css('pointer-event', 'none');
     });
 
-    var myLatLng = {
-        lat: 35.048127268401366,
-        lng: -85.29716491699219
+    var center = {
+        lat: 35.046520992754715,
+        lng: -85.29499769210815
     };
 
     var mapOpt = {
-        center:myLatLng,
-        zoom:16,
+        center:center,
+        zoom:17,
         mapTypeId:google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true,
         scrollwheel: false
@@ -67,32 +67,41 @@
 
     // polygon around parking 5th St parking garage
     var myCoordinates = [
-        new google.maps.LatLng(35.049757,-85.298935),
-        new google.maps.LatLng(35.049563,-85.298426),
-        new google.maps.LatLng(35.049023,-85.298737),
-        new google.maps.LatLng(35.049203,-85.299241)
+        new google.maps.LatLng(35.047425,-85.296789),
+        new google.maps.LatLng(35.046792,-85.297154),
+        new google.maps.LatLng(35.046502,-85.296344),
+        new google.maps.LatLng(35.047104,-85.295990),
+        new google.maps.LatLng(35.047113,-85.295529),
+        new google.maps.LatLng(35.046880,-85.294885),
+        new google.maps.LatLng(35.046520,-85.294987),
+        new google.maps.LatLng(35.046318,-85.294456),
+        new google.maps.LatLng(35.046700,-85.294236),
+        new google.maps.LatLng(35.047051,-85.294096),
+        new google.maps.LatLng(35.047473,-85.295175),
+        new google.maps.LatLng(35.047201,-85.295314),
+        new google.maps.LatLng(35.047174,-85.295405),
+        new google.maps.LatLng(35.047245,-85.295641),
+        new google.maps.LatLng(35.047574,-85.295480),
+        new google.maps.LatLng(35.047657,-85.295668),
+        new google.maps.LatLng(35.047280,-85.295926),
+        new google.maps.LatLng(35.047218,-85.296215),
+        new google.maps.LatLng(35.047420,-85.296779)
     ];
     var polyOptions = {
         path: myCoordinates,
         strokeWeight: 0,
-        fillColor: "#00457C",
-        fillOpacity: 1
+        fillColor: "#f05f40",
+        fillOpacity: 0.3
     }
     var it = new google.maps.Polygon(polyOptions);
     it.setMap(map);
 
     // polygon around EMCS building
     var myCoordinates = [
-        new google.maps.LatLng(35.047038,-85.295615),
-        new google.maps.LatLng(35.046959,-85.295389),
-        new google.maps.LatLng(35.046603,-85.295582),
-        new google.maps.LatLng(35.046529,-85.295395),
-        new google.maps.LatLng(35.046810,-85.295234),
-        new google.maps.LatLng(35.046726,-85.294998),
-        new google.maps.LatLng(35.046480,-85.295143),
-        new google.maps.LatLng(35.046283,-85.294622),
-        new google.maps.LatLng(35.046050,-85.294756),
-        new google.maps.LatLng(35.046489,-85.295931)
+        new google.maps.LatLng(35.046824,-85.295236),
+        new google.maps.LatLng(35.046735,-85.294999),
+        new google.maps.LatLng(35.046486,-85.295140),
+        new google.maps.LatLng(35.046584,-85.295371)
     ];
     var polyOptions = {
         path: myCoordinates,
@@ -104,53 +113,24 @@
     var it = new google.maps.Polygon(polyOptions);
     it.setMap(map);
 
-    // polyline path from 5th St garage to EMCS building
-    var myCoordinates = [
-        new google.maps.LatLng(35.049076,-85.299203),
-        new google.maps.LatLng(35.047530,-85.295266),
-        new google.maps.LatLng(35.047479,-85.295285),
-        new google.maps.LatLng(35.047451,-85.295317),
-        new google.maps.LatLng(35.047440,-85.295362),
-        new google.maps.LatLng(35.047444,-85.295440),
-        new google.maps.LatLng(35.047422,-85.295475),
-        new google.maps.LatLng(35.047396,-85.295475),
-        new google.maps.LatLng(35.047291,-85.295352),
-        new google.maps.LatLng(35.047256,-85.295344),
-        new google.maps.LatLng(35.047227,-85.295365),
-        new google.maps.LatLng(35.047225,-85.295416),
-        new google.maps.LatLng(35.047256,-85.295518),
-        new google.maps.LatLng(35.047256,-85.295553),
-        new google.maps.LatLng(35.047234,-85.295582),
-        new google.maps.LatLng(35.046999,-85.295706)
-    ];
-    var polyOptions = {
-        path: myCoordinates,
-        strokeColor: "#FF0000",
-        strokeOpacity: 0.5,
-        strokeWeight: 5
-    }
-
-    var it = new google.maps.Polyline(polyOptions);
-    it.setMap(map);
-
-    var marker_color = 'rgba(130, 18, 10, 0.8)';
+    var marker_color = 'rgba(240, 95, 64, 1)';
 
     // Parking icon marker
     var marker = new MarkerWithLabel({
-        position: {lat: 35.04909343402733, lng: -85.2992033958435},
+        position: {lat: 35.046923937050344, lng: -85.29460072517395},
         map: map, //global variable 'map' from opening function
         icon: ' ',
         labelContent: '<i class="fa fa-product-hunt fa-3x" style="color:' + marker_color + ';"></i>',
-        labelAnchor: new google.maps.Point(30,25)
+        labelAnchor: new google.maps.Point(20,25)
     });
 
     // Map icon marker
     var marker = new MarkerWithLabel({
-        position: {lat: 35.04689758653045, lng: -85.29557704925537},
+        position: center,
         map: map, //global variable 'map' from opening function
         icon: ' ',
         labelContent: '<i class="fa fa-map-marker fa-4x" style="color:' + marker_color + ';"></i>',
-        labelAnchor: new google.maps.Point(25,35)
+        labelAnchor: new google.maps.Point(30,55)
     });
 
 })(jQuery); // End of use strict
